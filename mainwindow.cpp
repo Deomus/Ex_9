@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->centralWidget->setAutoFillBackground(true);
     backgroundPalette = ui->centralWidget->palette();
     backgroundPalette.setColor(QPalette::Background, Qt::gray);
+    ui->centralWidget->setPalette(backgroundPalette);
 }
 
 MainWindow::~MainWindow()
@@ -39,7 +40,7 @@ void MainWindow::on_pushButton_answer_clicked()
     bool flag;
 
     flag = value.isEmpty();
-    if (checkValue(flag, Qt::red, "Пустая строка"))
+    if (checkValue(flag, Qt::gray, "Пустая строка"))
         return;
 
     value.toLongLong(&flag);
@@ -50,6 +51,6 @@ void MainWindow::on_pushButton_answer_clicked()
     if (checkValue(flag, Qt::yellow, "Вещественный"))
         return;
 
-    checkValue(true, Qt::gray, "Строка");
+    checkValue(true, Qt::cyan, "Строка");
 
 }
