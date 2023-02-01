@@ -59,7 +59,7 @@
       <x>70</x>
       <y>50</y>
       <width>401</width>
-      <height>35</height>
+      <height>42</height>
      </rect>
     </property>
     <property name="font">
@@ -76,7 +76,7 @@
         </font>
        </property>
        <property name="maxLength">
-        <number>19</number>
+        <number>18</number>
        </property>
       </widget>
      </item>

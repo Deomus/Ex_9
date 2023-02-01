@@ -6,6 +6,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->centralWidget->setAutoFillBackground(true);
+    backgroundPalette = ui->centralWidget->palette();
+    backgroundPalette.setColor(QPalette::Background, Qt::gray);
 }
 
 MainWindow::~MainWindow()
@@ -13,15 +16,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+// функция проверки значения на определенный тип
 bool MainWindow::checkValue(bool flag, QColor color, QString typeName)
 {
 
     if (flag)
     {
-        ui->centralWidget->setAutoFillBackground(true);
-        QPalette backgroundPalette = ui->centralWidget->palette();
         backgroundPalette.setColor(QPalette::Background, color);
-
         ui->centralWidget->setPalette(backgroundPalette);
         ui->label_type->setText(typeName);
 
@@ -30,6 +32,7 @@ bool MainWindow::checkValue(bool flag, QColor color, QString typeName)
     return false;
 }
 
+// обраьотка нажатия на кнопку
 void MainWindow::on_pushButton_answer_clicked()
 {
     QString value = ui->lineEdit_input->text();

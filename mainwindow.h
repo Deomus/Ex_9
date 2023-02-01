@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <string.h>
+#include <QPalette>
 
 namespace Ui {
 class MainWindow;
@@ -15,6 +16,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    QPalette backgroundPalette;
 
 private slots:
     bool checkValue(bool flag, QColor color, QString typeName);
